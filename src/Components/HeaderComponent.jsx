@@ -9,7 +9,7 @@ const HeaderComponent = () => {
     <div>
     <div className='header-container'>
       <div className='img-container'>
-        <img className='header-img' src='../public/usuario.png'></img>
+        <img className='header-img' src='/usuario.png'></img>
       </div>
       <h2>Jose Gómez</h2>
       <div className='main-header'>

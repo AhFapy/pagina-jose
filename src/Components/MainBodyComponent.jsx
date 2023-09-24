@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import BodyCards from './BodyCards'
 import CardBtn from '../Small Components/CardBtn'
 import PasosBtn from '../Small Components/PasosBtn'
@@ -22,20 +22,58 @@ const MainBodyComponent = () => {
         window.location.href = 'https://calendly.com/';
       };
 
-
+      function useFadeInAnimation(targetClass) {
+        const elementRef = useRef(null);
+      
+        useEffect(() => {
+          const element = elementRef.current;
+      
+          if (!element) return;
+      
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // El elemento es visible en el viewport, ejecutar la animación aquí
+                entry.target.classList.add(targetClass); // Agrega la clase CSS para la animación
+                observer.unobserve(entry.target); // Deja de observar el elemento
+              }
+            });
+          });
+      
+          // Iniciar la observación en el elemento
+          observer.observe(element);
+      
+          // Limpia el observador cuando el componente se desmonta
+          return () => {
+            observer.disconnect();
+          };
+        }, []);
+      
+        return elementRef;
+      }
+      
+      const bodyTitleRef = useFadeInAnimation("animate");
+      const bodyPRef = useFadeInAnimation("animate");
+      const bodyPRef2 = useFadeInAnimation("animate");
+      const cardContainerRef = useFadeInAnimation("animate");
+      const monetizeContainerRef = useFadeInAnimation('animate'); 
+      const pasosRef = useFadeInAnimation('animate'); 
+      const trabajoRef = useFadeInAnimation('animate'); 
+      const footerRef = useFadeInAnimation('animate'); 
+    
     const cardImage1 = <img className='card-gif' src='/img1.gif'></img>
   return (
     <div className='body'>
-        <h1 className='body-title'>¿No te lo crees?</h1>
-        <p className='body-p'>Suena demasiado bien pero es la Realidad</p>
+        <h1 className='body-title' ref={bodyTitleRef}>¿No te lo crees?</h1>
+        <p className='body-p' ref={bodyPRef}>Suena demasiado bien pero es la Realidad</p>
         <br/>
-        <p className='body-p'>Tú no te encargas de <u className='underline-1'>nada</u>, no pagas <u className='underline-2'>nada</u>, y puedes ganar <span className='mucho'>(mucho)</span> dinero.</p>
-        <div className='card-container'>
+        <p className='body-p' ref={bodyPRef2}>Tú no te encargas de <u className='underline-1'>nada</u>, no pagas <u className='underline-2'>nada</u>, y puedes ganar <span className='mucho'>(mucho)</span> dinero.</p>
+        <div className='card-container' ref={cardContainerRef}>
             <BodyCards text="Sin Inversion" img={cardImage1}/>
             <BodyCards text="Sin Riesgo" img={cardImage1}/>
         </div>
         <CardBtn/>
-        <div className='monetize-container'>
+        <div className='monetize-container' ref={monetizeContainerRef}>
             <div className='monetize-img-div'>
                 <img src='/foto-ig.jpg' className='monetize-img'></img>
             </div>
@@ -43,7 +81,7 @@ const MainBodyComponent = () => {
                 <p className='monetize-text'>El <u className='underline-2'>90%</u> De Los Expertos En Instagram <u className='underline-1'>No</u> Saben Cómo Monetizar Su Marca Personal</p>
             </div>
         </div>
-        <div className='pasos'>
+        <div className='pasos' ref={pasosRef}>
             <div className='pasos-header'>
                 <h2><b className='pasos-orange'>4</b> SIMPLES PASOS.</h2>
                 <br/>
@@ -53,7 +91,7 @@ const MainBodyComponent = () => {
             </div>
             <PasosBtn/>
         </div>
-        <div className='trabajo-div'>
+        <div className='trabajo-div' ref={trabajoRef}>
             <TrabajoComponent/>
         </div>
         {<p className={isVisible ? 'visible' : 'hidden'}>EL 5% DE LOS BENEFICIOS IRÁN DESTINADOS SIEMPRE A UNA ORGANIZACIÓN BENÉFICA</p>}
@@ -69,8 +107,8 @@ const MainBodyComponent = () => {
         <FaqComponent pregunta="¿Qué Garantía Me Das?" respuesta="Como no me pagas nada por adelantado, no tienes riesgo ninguno. Mi garantía es que aunque no vendas nada siempre saldrías ganando porque no pierdes ni un céntimo, aumentarás tu engagement, ganas experiencia y mucha información de valor que te ayudará a crecer tu audiencia, tu instragram, etc."/>
 
         </div>
-        <Calendly/>
-        <div className='pre-footer'>
+        <Calendly func={useFadeInAnimation}/>
+        <div ref={footerRef} className='pre-footer'>
             <div className='pre-footer-block'>
                 <h2>EMPIEZA A SACARLE PROVECHO A TU AUDIENCIA</h2>
                 <button onClick={handleButtonClick} className='pre-footer-btn'>Agendar Llamada</button>

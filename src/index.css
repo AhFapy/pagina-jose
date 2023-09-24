@@ -36,6 +36,7 @@
   width: 80%;
   border: 2px solid #FFC436;
   transition: 0.2s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .header-img:hover {
@@ -51,6 +52,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .header-h1 {
@@ -58,11 +60,13 @@
   line-height: 1.4;
   font-size: 6.5rem;
   color: #FFC436;
+  animation: fadeIn 1s ease-in-out;
 
 }
 
 .header-p {
   margin-top: 2rem;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .plazas-div {
@@ -106,6 +110,7 @@
   color: #FFC436;
   cursor: pointer;
   border-color: #FFC436;
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 .default-btn:hover {
@@ -201,6 +206,21 @@
     margin-top: 3rem;
     justify-content: center;
   }
+
+.animate {
+  animation: fadeIn 1.5s ease-in-out; /* Duración de 1 segundo con efecto de aceleración y desaceleración */
+
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Iniciar con opacidad cero (invisible) */
+  }
+  to {
+    opacity: 1; /* Terminar con opacidad completa (visible) */
+  }
+}
+
+
   .monetize-img-div {
     width: 30%;
     height: 35rem;
@@ -223,7 +243,7 @@
   }
 
   .pasos {
-    margin-top: 3rem;
+    margin-top: 5rem;
     width: 100%;
     display: flex;
     justify-content: center;

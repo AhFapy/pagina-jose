@@ -1,7 +1,7 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-function Calendly() {
+function Calendly(props) {
     useEffect(() => {
       const script = document.createElement('script');
       script.type = 'text/javascript';
@@ -17,7 +17,7 @@ function Calendly() {
     }, []); // El array vacío asegura que esto solo se ejecute una vez al montar el componente
   
     return (
-      <div className="calendly-inline-widget" data-url="https://calendly.com/jsegomeez-ak/llamada-de-cualificacion-para-monetizar-tu-audiencia" style={{ minWidth: '320px', height: '700px' }}>
+      <div ref={props.func("animate")} className="calendly-inline-widget" data-url="https://calendly.com/jsegomeez-ak/llamada-de-cualificacion-para-monetizar-tu-audiencia" style={{ minWidth: '320px', height: '700px' }}>
         <h1>Agenda una llamada conmigo</h1>
       </div>
     );

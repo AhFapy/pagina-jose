@@ -18,19 +18,30 @@
   align-items: center;
   flex-direction: column;
   font-size: 1.2rem;
-  background-color: #191D88;
+  background-color: black;
   padding-bottom: 3rem;
 }
 
 .img-container {
-  height: 8rem;
-  width: 8rem;
+  height: 12rem;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-img {
-  height: 100%;
-  width: 100%;
+  border-radius: 100%;
+  height: 80%;
+  width: 80%;
+  border: 2px solid #FFC436;
+  transition: 0.2s ease-in-out;
 }
+
+.header-img:hover {
+  opacity: 70%;
+}
+
 
 .main-header {
   margin-top: 2rem;
@@ -89,17 +100,17 @@
   font-weight: 600;
   font-size: 1.5rem;
   border-radius: 50px;
-  border: none;
-  background-color:  #FCF6F5;
+  border: 2px solid #FFC436;
+  background-color:  black;
   transition: transform 0.2s ease-in-out;
-  color: #337CCF;
+  color: #FFC436;
   cursor: pointer;
+  border-color: #FFC436;
 }
 
 .default-btn:hover {
   transform: scale(1.1);
   color: #FFC436;
-  background-color: #337CCF;
   border: 2px #FFC436 solid;
 }
 
@@ -236,9 +247,155 @@
     font-size: 100%;
     text-align: left;
     font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .trabajo-div {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 
+  .sold-out-container {
+    font-size: 2rem;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-weight: 600;
+  }
+
+  .sold-out-txt {
+    font-size: 1.35rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
+
+.money-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.money-svg {
+  fill: white;
+  height: 10vh;
+  width: fit-content;
+  transition: all ease-in-out 0.3s;
+  margin-top: 5rem;
+}
+
+.money-svg:hover {
+  fill: purple;
+  cursor: pointer;
+}
+
+.visible {
+  opacity: 1; /* Hacer visible con opacidad completa */
+  visibility: visible; /* Hacerlo visible */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Agregar transición para opacidad y visibilidad */
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  opacity: 0; /* Hacerlo invisible */
+  visibility: hidden; /* Ocultarlo */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Agregar transición para opacidad y visibilidad */
+  margin-bottom: 2rem;
+}
+
+.faq-container {
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.faq-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.pre-footer {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pre-footer-block {
+  background-color: #F09334;
+  width: 70%;
+  height: 60%;
+  border-radius: 1rem;
+  font-size: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pre-footer-btn {
+  font: inherit;
+  margin-top: 2.5rem;
+  height: 4.5rem;
+  width: 28%;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  border: none;
+  background-color:  #303030;
+  transition: transform 0.2s ease-in-out;
+  color: white;
+  cursor: pointer;
+}
+
+.pre-footer-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1450px) {
+  .pre-footer-block {
+    font-size: 3.5vh;
+  }
+}
+
+@media (max-width: 650px) {
+  .pre-footer-block {
+    font-size: 3vh;
+  }
+  .pre-footer-btn {
+    font-size: 1rem;
+    width: 50%;
+    height: 3.5rem;
+  }
+}
+
+.footer-container {
+  height: 10vh;
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .pre-footer-block {
+    font-size: 2.5vh;
+    width: 80%;
+  }
+  .pre-footer-btn {
+    font-size: 0.8rem;
+    width: 50%;
+    height: 3.5rem;
+  }
+}
+  
+  
   @media (max-width: 1450px) {
     .monetize-text {
       font-size: 3rem;
@@ -315,7 +472,7 @@
     font-size: 1.2rem;
   }
   .monetize-img-div {
-    width: 100%;
+    width: 90%;
     display: flex;
     padding: 0;
     justify-content: center;
@@ -324,7 +481,7 @@
   }
 
   .monetize-img {
-    width: 100%;
+    width: 90%;
   }
   
   }
@@ -340,11 +497,11 @@
       font-size: 1rem;
     }
     .monetize-img-div {
-      width: 90%;
+      width: 85%;
       height: 20rem;
     }
     .monetize-text-div {
-      width: 90%;
+      width: 100%;
     }  
     .monetize-text {
       font-size: 2.5rem;

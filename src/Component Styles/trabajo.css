@@ -1,0 +1,86 @@
+.trabajo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    flex-direction: column;
+    flex-direction: row;
+    margin-bottom: 5rem;
+}
+
+.mi-trabajo {
+    width: 35%;
+    text-align: left;
+}
+
+.tu-trabajo {
+    width: 35%;
+    text-align: right;
+}
+
+.trabajo-text-container {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+}
+.trabajo-text {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+.mi-trabajo-text {
+    text-align: left;
+    padding-top: 2rem;
+    width: 50%;
+}
+
+.tu-trabajo-text {
+    padding-top: 2rem;
+    width: 100%;
+    text-align: right;
+}
+.svg {
+    height: 1rem;
+    margin-right: 1rem;
+    fill: #DE63FF;
+}
+
+@media (max-width: 900px) {
+    .trabajo-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .mi-trabajo {
+        width: 100%;
+        text-align: center;
+    }
+    .mi-trabajo-text {
+        text-align: center;
+        padding-top: 2rem;
+        width: 100%;
+    }
+    .tu-trabajo-text {
+        text-align: center;
+        padding-top: 2rem;
+        width: 100%;
+    }
+    
+    .tu-trabajo {
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+  }
+
+  @media (max-width: 360px) {
+    .trabajo-text {
+        font-size: 0.8rem;
+    }
+    .svg {
+        height: 0.7rem;
+    }
+  }

@@ -1,0 +1,35 @@
+.widget-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .widget-container {
+    width: 75%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 3%;
+    justify-content: center;
+    align-content: center;
+    height: auto; /* Set a percentage-based height for responsiveness */
+  }
+  
+  .widget {
+    transition: ease-in-out 0.2s all;
+    margin: 3% 3% 3% 3%;
+  }
+  
+  .widget:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  @media (max-width: 460px) {
+    .widget {
+        height: 10%;
+        width: 60%;
+    }
+  }
+

@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeaderComponent = () => {
     const handleButtonClick = () => {
-        window.location.href = 'https://calendly.com/';
+        window.location.href = 'https://calendly.com/jsegomeez-ak/llamada-de-cualificacion-para-monetizar-tu-audiencia';
       };
     
   return (

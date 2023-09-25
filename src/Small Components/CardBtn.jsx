@@ -5,7 +5,7 @@ const CardBtn = () => {
   return (
     <div>
 <div className="wrapper">
-  <a className="cta" href="https://calendly.com/">
+  <a className="cta" href="https://calendly.com/jsegomeez-ak/llamada-de-cualificacion-para-monetizar-tu-audiencia/">
     <span>Saber Más</span>
     <span>
       <svg width="66px" height="1em" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
